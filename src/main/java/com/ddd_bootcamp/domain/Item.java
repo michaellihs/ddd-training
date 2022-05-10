@@ -9,6 +9,10 @@ public class Item {
         this.quantity = quantity;
     }
 
+    public Product getProduct() {
+        return this.product;
+    }
+
     @Override
     public String toString() {
         return "Item{" +

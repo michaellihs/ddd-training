@@ -23,6 +23,15 @@ public class Application {
         List<Item> items = cart.getItems();
         System.out.println("--------------------------------------------------------");
         System.out.println("items = " + items);
+
+        cart.remove("Apple Pencil");
+
+        System.out.println("--------------------------------------------------------");
+        System.out.println("--------------------------------------------------------");
+        System.out.println("Cart = " + cart);
+        items = cart.getItems();
+        System.out.println("--------------------------------------------------------");
+        System.out.println("items = " + items);
         System.out.println("--------------------------------------------------------");
 
     }
