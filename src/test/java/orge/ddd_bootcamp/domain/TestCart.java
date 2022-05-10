@@ -5,8 +5,7 @@ import com.ddd_bootcamp.domain.Item;
 import com.ddd_bootcamp.domain.Product;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class TestCart {
 
@@ -19,7 +18,7 @@ public class TestCart {
         cart1.add(item1);
         cart2.add(item2);
 
-        assertFalse(cart1.equals(cart2));
+        assertNotEquals(cart1, cart2);
     }
 
     @Test
@@ -28,6 +27,13 @@ public class TestCart {
         Item item1 = new Item(new Product("Sony Wireless headphone"), 1);
         cart1.add(item1);
 
-        assertTrue(cart1.equals(cart1));
+        assertEquals(cart1, cart1);
+    }
+
+    @Test
+    public void equalsShouldReturnFalseWhenComparingCartWithProduct() {
+        Product product = new Product("Test");
+        Cart cart = new Cart();
+        assertFalse(cart.equals(product));
     }
 }
